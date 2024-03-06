@@ -80,6 +80,9 @@ Guts of OAI to the FAPI
 for (int i = 0; i < buffer_length >> 3; i++)  // Dividing by 8
       {
         xmmp0  = simde_mm256_madd_epi16(chF_256[i], rxF_256[i]);
+       // xmmp0 contains real part of 8 consecutive outputs (32-bit) of conj(H_m[i])*R_m[i]
+ 
+
 ...
 }
 ```
