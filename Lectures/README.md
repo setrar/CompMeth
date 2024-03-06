@@ -75,3 +75,11 @@ Guts of OAI to the FAPI
 ```math
 \rho = P12
 ```
+
+```c
+for (int i = 0; i < buffer_length >> 3; i++)  // Dividing by 8
+      {
+        xmmp0  = simde_mm256_madd_epi16(chF_256[i], rxF_256[i]);
+...
+}
+```
