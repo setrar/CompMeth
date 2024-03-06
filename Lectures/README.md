@@ -66,3 +66,9 @@ Guts of OAI to the FAPI
 
 
 - [ ] [nr_pusch_symbol_processing](https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/openair1/PHY/NR_TRANSPORT/nr_ulsch_demodulation.c#L1391)
+
+- [ ] [](https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/openair1/PHY/NR_TRANSPORT/nr_ulsch_demodulation.c#L1261)
+
+```
+$\rho = P12$
+```
