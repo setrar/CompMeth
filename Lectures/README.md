@@ -9,8 +9,13 @@ https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/executables/nr-g
 - [ ] [phy_procedures_gNB_uespec_RX](https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/executables/nr-gnb.c?ref_type=heads#L262)
 - PUSCH
 - PUCCL
-- SRS 
-      
+- SRS
+
+call to MAC Layer
+
+```c
+gNB->if_inst->NR_UL_indication(&gNB->UL_INFO);
+```
 
 
 - [ ] [RU](https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/openair1/SCHED_NR/nr_ru_procedures.c?ref_type=heads#L264)
