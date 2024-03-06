@@ -30,3 +30,5 @@ gNB->if_inst->NR_UL_indication(&gNB->UL_INFO);
 
 - [ ] [nr_fill_ulsch](https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/openair1/PHY/NR_TRANSPORT/nr_ulsch.c?ref_type=heads#L61)
 Guts of OAI to the FAPI
+
+- [ ] [Channel Estimation](https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/openair1/PHY/NR_TRANSPORT/nr_ulsch_demodulation.c?ref_type=heads#L1468)
