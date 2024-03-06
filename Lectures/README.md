@@ -7,8 +7,8 @@ https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/executables/nr-g
 - [ ] [rx_func](https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/executables/nr-gnb.c?ref_type=heads#L206)
 
 - [ ] [phy_procedures_gNB_uespec_RX](https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/executables/nr-gnb.c?ref_type=heads#L262)
+- PUCCH
 - PUSCH
-- PUCCL
 - SRS
 
 call to MAC Layer
