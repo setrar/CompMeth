@@ -53,3 +53,11 @@ Guts of OAI to the FAPI
                           symbol, 
                           rel15_ul->nrOfLayers);
 ```
+
+```c
+        for (int aatx = 0; aatx < rel15_ul->nrOfLayers; aatx++) {
+          pusch_vars->ulsch_power[aarx] += signal_energy_nodc(
+              &pusch_vars->ul_ch_estimates[aatx * gNB->frame_parms.nb_antennas_rx + aarx][symbol * frame_parms->ofdm_symbol_size],
+              rel15_ul->rb_size * 12);
+        }
+```
