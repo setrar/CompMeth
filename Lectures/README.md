@@ -61,3 +61,5 @@ Guts of OAI to the FAPI
               rel15_ul->rb_size * 12);
         }
 ```
+
+- [ ] [Channel Scaling](https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/openair1/PHY/NR_TRANSPORT/nr_ulsch_demodulation.c#L1616)
