@@ -45,3 +45,11 @@ Guts of OAI to the FAPI
                                     &nvar_tmp);
 ```
 
+```c
+      // measure the SNR from the channel estimation
+      nr_gnb_measurements(gNB, 
+                          &gNB->ulsch[ulsch_id], 
+                          pusch_vars, 
+                          symbol, 
+                          rel15_ul->nrOfLayers);
+```
