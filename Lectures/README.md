@@ -69,6 +69,9 @@ Guts of OAI to the FAPI
 
 - [ ] [](https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/openair1/PHY/NR_TRANSPORT/nr_ulsch_demodulation.c#L1261)
 
-```
-$\rho = P12$
+
+- [ ] [nr_ulsch_channel_compensation](https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/openair1/PHY/NR_TRANSPORT/nr_ulsch_demodulation.c#L468)
+
+```math
+\rho = P12
 ```
