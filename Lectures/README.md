@@ -86,3 +86,13 @@ for (int i = 0; i < buffer_length >> 3; i++)  // Dividing by 8
 ...
 }
 ```
+
+- [ ] [Intel® Intrinsics Guide ](https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html#text=_mm256_madd_epi16&ig_expand=4200)
+
+```c
+FOR j := 0 to 7
+	i := j*32
+	dst[i+31:i] := SignExtend32(a[i+31:i+16]*b[i+31:i+16]) + SignExtend32(a[i+15:i]*b[i+15:i])
+ENDFOR
+dst[MAX:256] := 0
+```
