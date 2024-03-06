@@ -24,3 +24,6 @@ gNB->if_inst->NR_UL_indication(&gNB->UL_INFO);
 - [ ] [phy_procedures_nr_gNB](https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/openair1/SCHED_NR/phy_procedures_nr_gNB.c?ref_type=heads#L752)
 
 - [ ] [NR_TRANSPORT](https://gitlab.eurecom.fr/oai/openairinterface5g/-/tree/develop/openair1/PHY/NR_TRANSPORT?ref_type=heads)
+
+- [ ] [nr_fill_ulsch](https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/openair1/PHY/NR_TRANSPORT/nr_ulsch.c?ref_type=heads#L61)
+Guts of OAI to the FAPI
