@@ -32,3 +32,16 @@ gNB->if_inst->NR_UL_indication(&gNB->UL_INFO);
 Guts of OAI to the FAPI
 
 - [ ] [Channel Estimation](https://gitlab.eurecom.fr/oai/openairinterface5g/-/blob/develop/openair1/PHY/NR_TRANSPORT/nr_ulsch_demodulation.c?ref_type=heads#L1468)
+
+```c
+        nr_pusch_channel_estimation(gNB,
+                                    slot,
+                                    get_dmrs_port(nl,rel15_ul->dmrs_ports),
+                                    symbol,
+                                    ulsch_id,
+                                    bwp_start_subcarrier,
+                                    rel15_ul,
+                                    &max_ch,
+                                    &nvar_tmp);
+```
+
