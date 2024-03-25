@@ -96,3 +96,9 @@ FOR j := 0 to 7
 ENDFOR
 dst[MAX:256] := 0
 ```
+
+# References
+
+- [ ] [GNU Radio with a Rusty FPGA Experiment building FPGA accelerated blocks with Rust bindings](https://www.youtube.com/watch?v=TUDkKxAdeWk)
+
+* [Still use SIMD](https://www.youtube.com/watch?v=TUDkKxAdeWk&t=563s)
