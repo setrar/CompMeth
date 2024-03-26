@@ -17,6 +17,7 @@ BUILD SHOULD BE SUCCESSFUL
 cd ran_build/build
 ```
 
+
 ```
 ./nr_ulsim -C 4 -m 25 -s 24 -z 4 -n 100 -P -q 1 -R 273 -r 273
 ```
@@ -49,7 +50,11 @@ Exiting execution
 Exiting at: /home/bricer/Developer/openairinterface5g/common/utils/system.c:266 threadCreate(), _Assert_Exit_
 ```
 
-
+```
+the "-C" is the number of cores/threads to use. The "-P" gives benchmarking output. I will explain when you try. -m is the MCS and -q the codebook. -q1 means 256QAM codebook so mcs > 19 means 256QAM, 14-19 is 64QAM. -q0 is the 64QAM codebook. -z is the number of receive antennas and -n is the number of trials to run.
+11:18
+if you run with -n1 you get some MATLAB .m files with internal signals from the MODEM (like the llrs, the channel compensated outputs and the raw RX signals in time and frequency.
+```
 
 
 ---
