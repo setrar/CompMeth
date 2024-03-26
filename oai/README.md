@@ -1,6 +1,6 @@
 openairinterface5
 
-
+```
 ./build_oai --phy_simulators
 ```
 > Returns
