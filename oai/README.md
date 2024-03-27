@@ -674,6 +674,100 @@ cd openairinterface5g/cmake_targets
 ```
 
 
+### Coding 
+
+
+- Polar Code
+
+~/Developer/openairinterface5g/openair1/PHY/CODING
+less ./nrPolar_tools/nr_polar_decoding_tools.c
+
+```c
+void computeBeta(const t_nrPolar_params *pp,decoder_node_t *node) {
+
+```
+
+- ListCRC
+
+```
+./polartest -s -10
+Initializing random number generator, seed 16810622875026781604
+testArrayLength 1 realArrayLength 2
+SNR -10.000000
+...
+```
+
+```
+./polartest -q
+Initializing random number generator, seed 6947532659631140661
+testArrayLength 1 realArrayLength 2
+SNR -20.000000
+[ListSize=8] SNR= -20.000, BLER= 1.000000, BER= 1.000000000, t_Encoder=    2.826us, t_Decoder=    3.434us
+SNR -19.500000
+[ListSize=8] SNR= -19.500, BLER= 1.000000, BER= 1.000000000, t_Encoder=    2.770us, t_Decoder=    3.376us
+SNR -19.000000
+[ListSize=8] SNR= -19.000, BLER= 1.000000, BER= 1.000000000, t_Encoder=    2.753us, t_Decoder=    3.340us
+SNR -18.500000
+[ListSize=8] SNR= -18.500, BLER= 1.000000, BER= 1.000000000, t_Encoder=    2.744us, t_Decoder=    3.311us
+SNR -18.000000
+[ListSize=8] SNR= -18.000, BLER= 1.000000, BER= 1.000000000, t_Encoder=    2.738us, t_Decoder=    3.288us
+SNR -17.500000
+[ListSize=8] SNR= -17.500, BLER= 1.000000, BER= 1.000000000, t_Encoder=    2.735us, t_Decoder=    3.266us
+SNR -17.000000
+[ListSize=8] SNR= -17.000, BLER= 1.000000, BER= 1.000000000, t_Encoder=    2.732us, t_Decoder=    3.248us
+SNR -16.500000
+[ListSize=8] SNR= -16.500, BLER= 1.000000, BER= 1.000000000, t_Encoder=    2.730us, t_Decoder=    3.232us
+SNR -16.000000
+[ListSize=8] SNR= -16.000, BLER= 1.000000, BER= 1.000000000, t_Encoder=    2.728us, t_Decoder=    3.217us
+SNR -15.500000
+[ListSize=8] SNR= -15.500, BLER= 1.000000, BER= 1.000000000, t_Encoder=    2.727us, t_Decoder=    3.203us
+SNR -15.000000
+[ListSize=8] SNR= -15.000, BLER= 1.000000, BER= 1.000000000, t_Encoder=    2.726us, t_Decoder=    3.191us
+SNR -14.500000
+[ListSize=8] SNR= -14.500, BLER= 1.000000, BER= 1.000000000, t_Encoder=    2.725us, t_Decoder=    3.180us
+SNR -14.000000
+[ListSize=8] SNR= -14.000, BLER= 1.000000, BER= 1.000000000, t_Encoder=    2.724us, t_Decoder=    3.171us
+SNR -13.500000
+[ListSize=8] SNR= -13.500, BLER= 0.999000, BER= 0.999000000, t_Encoder=    2.723us, t_Decoder=    3.163us
+SNR -13.000000
+[ListSize=8] SNR= -13.000, BLER= 0.999000, BER= 0.999000000, t_Encoder=    2.723us, t_Decoder=    3.156us
+SNR -12.500000
+[ListSize=8] SNR= -12.500, BLER= 0.996000, BER= 0.996000000, t_Encoder=    2.722us, t_Decoder=    3.150us
+SNR -12.000000
+[ListSize=8] SNR= -12.000, BLER= 0.989000, BER= 0.989000000, t_Encoder=    2.722us, t_Decoder=    3.144us
+SNR -11.500000
+[ListSize=8] SNR= -11.500, BLER= 0.975000, BER= 0.975000000, t_Encoder=    2.721us, t_Decoder=    3.139us
+SNR -11.000000
+[ListSize=8] SNR= -11.000, BLER= 0.964000, BER= 0.964000000, t_Encoder=    2.721us, t_Decoder=    3.134us
+SNR -10.500000
+[ListSize=8] SNR= -10.500, BLER= 0.913000, BER= 0.913000000, t_Encoder=    2.721us, t_Decoder=    3.130us
+SNR -10.000000
+[ListSize=8] SNR= -10.000, BLER= 0.828000, BER= 0.828000000, t_Encoder=    2.721us, t_Decoder=    3.126us
+SNR -9.500000
+[ListSize=8] SNR=  -9.500, BLER= 0.706000, BER= 0.706000000, t_Encoder=    2.720us, t_Decoder=    3.122us
+SNR -9.000000
+[ListSize=8] SNR=  -9.000, BLER= 0.615000, BER= 0.615000000, t_Encoder=    2.720us, t_Decoder=    3.119us
+SNR -8.500000
+[ListSize=8] SNR=  -8.500, BLER= 0.455000, BER= 0.455000000, t_Encoder=    2.720us, t_Decoder=    3.116us
+SNR -8.000000
+[ListSize=8] SNR=  -8.000, BLER= 0.297000, BER= 0.297000000, t_Encoder=    2.719us, t_Decoder=    3.113us
+SNR -7.500000
+[ListSize=8] SNR=  -7.500, BLER= 0.159000, BER= 0.159000000, t_Encoder=    2.719us, t_Decoder=    3.111us
+SNR -7.000000
+[ListSize=8] SNR=  -7.000, BLER= 0.071000, BER= 0.071000000, t_Encoder=    2.719us, t_Decoder=    3.109us
+SNR -6.500000
+[ListSize=8] SNR=  -6.500, BLER= 0.026000, BER= 0.026000000, t_Encoder=    2.719us, t_Decoder=    3.106us
+SNR -6.000000
+[ListSize=8] SNR=  -6.000, BLER= 0.012000, BER= 0.012000000, t_Encoder=    2.719us, t_Decoder=    3.104us
+SNR -5.500000
+[ListSize=8] SNR=  -5.500, BLER= 0.001000, BER= 0.001000000, t_Encoder=    2.719us, t_Decoder=    3.103us
+SNR -5.000000
+[ListSize=8] SNR=  -5.000, BLER= 0.000000, BER= 0.000000000, t_Encoder=    2.719us, t_Decoder=    3.101us
+                          Name                      Total                 Per Trials                 Num Trials                 CPU_F_GHz 2.993147
+                 polar_encoder:            2.718 us;           31000;           5.243 us;
+                 polar_decoder:            3.101 us;           31000;           6.092 us;
+```
+
 # References
 
 - [ ] [How To Install Ubuntu 22.10 On M1 or M2 Mac || RUN NEW Ubuntu On ANY Mac W/ Apple Silicon Using UTM](https://www.youtube.com/watch?v=O19mv1pe76M&t=0s)
