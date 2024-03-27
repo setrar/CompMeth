@@ -1,5 +1,15 @@
 openairinterface5
 
+- 
+
+```
+cat /proc/cmdline
+```
+> Returns
+```powershell
+BOOT_IMAGE=(hd0,gpt2)/vmlinuz-5.14.0-362.18.1.el9_3.x86_64 root=/dev/mapper/rhel_meduse-root ro crashkernel=1G-4G:192M,4G-64G:256M,64G-:512M resume=/dev/mapper/rhel_meduse-swap rd.lvm.lv=rhel_meduse/root rd.lvm.lv=rhel_meduse/swap rhgb quiet skew_tick=1 tsc=reliable rcupdate.rcu_normal_after_boot=1 isolcpus=managed_irq,domain,0,2,4,6,8,10,12,14 intel_pstate=disable nosoftlockup
+```
+
 ```
 sudo ./nr_ulsim -C 4 -m 25 -s 24 -z 4 -n 100 -P -q 1 -R 273 -r 273
 ```
@@ -630,7 +640,23 @@ Exiting execution
 Exiting at: /home/bricer/Developer/openairinterface5g/common/utils/system.c:266 threadCreate(), _Assert_Exit_
 ```
 
-the "-C" is the number of cores/threads to use. The "-P" gives benchmarking output. I will explain when you try. -m is the MCS and -q the codebook. -q1 means 256QAM codebook so mcs > 19 means 256QAM, 14-19 is 64QAM. -q0 is the 64QAM codebook. -z is the number of receive antennas and -n is the number of trials to run.
+the "-C" is the number of cores/threads to use.
+
+ -m is the MCS 
+
+ -q1 means 256QAM codebook (see q equals to 2
+
+ -R Max Resource Block  
+
+ -r means 273 RB (resource blocks) 
+
+ -z 4 receive Antennas got up to 8
+
+ -n 100 (trials)
+
+ -P output (std output) -P 1 (goes to Matlab files)
+
+The "-P" gives benchmarking output. I will explain when you try.and -q the codebook.  so mcs > 19 means 256QAM, 14-19 is 64QAM. -q0 is the 64QAM codebook. -z is the number of receive antennas and -n is the number of trials to run.
 11:18
 if you run with -n1 you get some MATLAB .m files with internal signals from the MODEM (like the llrs, the channel compensated outputs and the raw RX signals in time and frequency.
 
