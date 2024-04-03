@@ -652,6 +652,9 @@ DMRS CDM gr w/o data:	1
 
 ```
 sudo ./nr_ulsim -C 12 -m 25 -s 24 -z 4 -n 100 -P -q 1 -R 273 -r 273
+```
+> Returns
+```powershell
 [sudo] password for bricer: 
 CMDLINE: "./nr_ulsim" "-C" "12" "-m" "25" "-s" "24" "-z" "4" "-n" "100" "-P" "-q" "1" "-R" "273" "-r" "273" 
 [CONFIG] get parameters from cmdline [CONFIG] debug flags: 0x00400000
