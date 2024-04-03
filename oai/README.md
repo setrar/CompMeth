@@ -21,7 +21,7 @@ git clone git@gitlab.eurecom.fr:robert/openairinterface5g.git
 - [ ] Build
 
 ```
-cd ~/Developer/openairinterface5g/cmake_targets/ran_build/build
+cd ~/Developer/openairinterface5g/cmake_targets
 ```
 
 ```
@@ -56,13 +56,16 @@ dlsim ulsim ldpctest polartest smallblocktest nr_pbchsim nr_dlschsim nr_ulschsim
 BUILD SHOULD BE SUCCESSFUL
 ```
 
+- [ ] Run tests
+
+* get to the build directory
 
 ```
-[bricer@meduse build]$ cd ~/Developer/openairinterface5g/cmake_targets/ran_build/build
+cd ran_build/build
 ```
 
 
-
+* run the tests with `sudo` privileges to retain `Thread` access
 
 ```
 sudo ./nr_ulsim -C 4 -m 25 -s 24 -z 4 -n 100 -P -q 1 -R 273 -r 273
@@ -644,13 +647,17 @@ DMRS length:	1
 DMRS CDM gr w/o data:	1
 ```
 
+
+# References
+
+
 ```
 ./build_oai --phy_simulators
 ```
 > Returns
 ```
 ...
-cd /home/bricer/Developer/openairinterface5g/cmake_targets/ran_build/build
+cd ~/Developer/openairinterface5g/cmake_targets/ran_build/build
 Running "cmake3 --build .  --target dlsim ulsim ldpctest polartest smallblocktest nr_pbchsim nr_dlschsim nr_ulschsim nr_dlsim nr_ulsim nr_pucchsim nr_prachsim params_libconfig coding rfsimulator dfts -- -j28" 
 Log file for compilation is being written to: /home/bricer/Developer/openairinterface5g/cmake_targets/log/all.txt
 dlsim ulsim ldpctest polartest smallblocktest nr_pbchsim nr_dlschsim nr_ulschsim nr_dlsim nr_ulsim nr_pucchsim nr_prachsim params_libconfig coding rfsimulator dfts compiled
