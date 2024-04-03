@@ -647,6 +647,257 @@ DMRS length:	1
 DMRS CDM gr w/o data:	1
 ```
 
+#### Running with 12 cores (to match 12 symbols ??)
+
+
+```
+sudo ./nr_ulsim -C 12 -m 25 -s 24 -z 4 -n 100 -P -q 1 -R 273 -r 273
+[sudo] password for bricer: 
+CMDLINE: "./nr_ulsim" "-C" "12" "-m" "25" "-s" "24" "-z" "4" "-n" "100" "-P" "-q" "1" "-R" "273" "-r" "273" 
+[CONFIG] get parameters from cmdline [CONFIG] debug flags: 0x00400000
+Initializing random number generator, seed 14140659984681693360
+handling optarg C
+handling optarg m
+handling optarg s
+Setting SNR0 to 24.000000
+handling optarg z
+handling optarg n
+handling optarg P
+handling optarg q
+handling optarg R
+handling optarg r
+[CONFIG] log_config: 2/3 parameters successfully set 
+[CONFIG] log_config: 50/50 parameters successfully set 
+[CONFIG] log_config: 50/50 parameters successfully set 
+[CONFIG] log_config: 16/16 parameters successfully set 
+[CONFIG] log_config: 16/16 parameters successfully set 
+log init done
+create a thread for core -1
+create a thread for core -1
+create a thread for core -1
+create a thread for core -1
+create a thread for core -1
+create a thread for core -1
+create a thread for core -1
+create a thread for core -1
+create a thread for core -1
+create a thread for core -1
+create a thread for core -1
+create a thread for core -1
+DL frequency 3649140000: band 48, UL frequency 3649140000
+[PHY]   Init: N_RB_DL 273, first_carrier_offset 2458, nb_prefix_samples 288,nb_prefix_samples0 352, ofdm_symbol_size 4096
+[CONFIG] loader: 2/2 parameters successfully set 
+[CONFIG] loader.dfts: 1/2 parameters successfully set 
+shlib_path libdfts.so
+[LOADER] library libdfts.so successfully loaded
+[CONFIG] loader.ldpc: 1/2 parameters successfully set 
+shlib_path libldpc.so
+[LOADER] library libldpc.so successfully loaded
+AWGN: ricean_factor 0.000000
+[CONFIG] loader.dfts: 1/2 parameters successfully set 
+shlib_path libdfts.so
+[LOADER] library libdfts.so has been loaded previously, reloading function pointers
+[LOADER] library libdfts.so successfully loaded
+num dmrs sym 1
+[ULSIM]: length_dmrs: 1, l_prime_mask: 1	number_dmrs_symbols: 1, mapping_type: 1 add_pos: 0 
+[ULSIM]: CDM groups: 1, dmrs_config_type: 0, num_rbs: 273, nb_symb_sch: 12
+[ULSIM]: MCS: 25, mod order: 8, code_rate: 8850
+
+[ULSIM]: VALUE OF G: 301392, TBS: 262376
+*****************************************
+SNR 24.000000: n_errors (13/100,0/13,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (77099/30139200,10056/3918096,0/0,0/0)
+
+SNR 24.000000: Channel BLER (1.300000e-01,0.000000e+00,-nan,-nan Channel BER (2.558097e-03,2.566553e-03,-nan,-nan) Avg round 1.13, Eff Rate 245321.5600 bits/slot, Eff Throughput 93.50, TBS 262376 bits/slot
+DMRS-PUSCH delay estimation: min 0, max 0, average 0.000000
+*****************************************
+
+gNB RX
+Total PHY proc rx                           697.89 us (113 trials)
+ Statistics std=127.87, median=0.00, q1=0.00, q3=0.00 µs (on 0 trials)
+|__ RX PUSCH time                          305.98 us (113 trials)
+    |__ ULSCH channel estimation time      153.20 us (113 trials)
+    |__ RX PUSCH Initialization time        49.86 us (113 trials)
+    |__ RX PUSCH Symbol Processing time    102.40 us (113 trials)
+
+UE TX
+|__ ULSCH total encoding time              317.87 us (113 trials)
+    |__ ULSCH segmentation time             20.22 us (100 trials)
+    |__ ULSCH LDPC encoder time              0.00 us (  1 trials)
+    |__ ULSCH rate-matching time             0.76 us (3616 trials)
+    |__ ULSCH interleaving time              3.02 us (3616 trials)
+|__ RX SRS time                              0.00 us (  0 trials)
+    |__ Generate SRS sequence time           0.00 us (  0 trials)
+    |__ Get SRS signal time                  0.00 us (  0 trials)
+    |__ SRS channel estimation time          0.00 us (  0 trials)
+    |__ SRS timing advance estimation time   0.00 us (  0 trials)
+    |__ SRS report TLV build time            0.00 us (  0 trials)
+        |__ SRS beam report build time       0.00 us (  0 trials)
+        |__ SRS IQ matrix build time         0.00 us (  0 trials)
+
+*****************************************
+SNR 24.200000: n_errors (8/100,0/8,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (72971/30139200,5638/2411136,0/0,0/0)
+
+SNR 24.200000: Channel BLER (8.000000e-02,0.000000e+00,-nan,-nan Channel BER (2.421133e-03,2.338317e-03,-nan,-nan) Avg round 1.08, Eff Rate 251880.9600 bits/slot, Eff Throughput 96.00, TBS 262376 bits/slot
+DMRS-PUSCH delay estimation: min 0, max 0, average 0.000000
+*****************************************
+
+gNB RX
+Total PHY proc rx                           681.02 us (108 trials)
+ Statistics std=30.15, median=0.00, q1=0.00, q3=0.00 µs (on 0 trials)
+|__ RX PUSCH time                          302.75 us (108 trials)
+    |__ ULSCH channel estimation time      152.95 us (108 trials)
+    |__ RX PUSCH Initialization time        49.65 us (108 trials)
+    |__ RX PUSCH Symbol Processing time     99.66 us (108 trials)
+
+UE TX
+|__ ULSCH total encoding time              320.91 us (108 trials)
+    |__ ULSCH segmentation time             20.23 us (200 trials)
+    |__ ULSCH LDPC encoder time              0.00 us (  1 trials)
+    |__ ULSCH rate-matching time             0.75 us (3456 trials)
+    |__ ULSCH interleaving time              3.01 us (3456 trials)
+|__ RX SRS time                              0.00 us (  0 trials)
+    |__ Generate SRS sequence time           0.00 us (  0 trials)
+    |__ Get SRS signal time                  0.00 us (  0 trials)
+    |__ SRS channel estimation time          0.00 us (  0 trials)
+    |__ SRS timing advance estimation time   0.00 us (  0 trials)
+    |__ SRS report TLV build time            0.00 us (  0 trials)
+        |__ SRS beam report build time       0.00 us (  0 trials)
+        |__ SRS IQ matrix build time         0.00 us (  0 trials)
+
+*****************************************
+SNR 24.400000: n_errors (8/100,0/8,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (69719/30139200,5393/2411136,0/0,0/0)
+
+SNR 24.400000: Channel BLER (8.000000e-02,0.000000e+00,-nan,-nan Channel BER (2.313233e-03,2.236705e-03,-nan,-nan) Avg round 1.08, Eff Rate 251880.9600 bits/slot, Eff Throughput 96.00, TBS 262376 bits/slot
+DMRS-PUSCH delay estimation: min 0, max 0, average 0.000000
+*****************************************
+
+gNB RX
+Total PHY proc rx                           679.55 us (108 trials)
+ Statistics std=30.59, median=0.00, q1=0.00, q3=0.00 µs (on 0 trials)
+|__ RX PUSCH time                          303.33 us (108 trials)
+    |__ ULSCH channel estimation time      153.04 us (108 trials)
+    |__ RX PUSCH Initialization time        49.55 us (108 trials)
+    |__ RX PUSCH Symbol Processing time    100.26 us (108 trials)
+
+UE TX
+|__ ULSCH total encoding time              321.19 us (108 trials)
+    |__ ULSCH segmentation time             20.25 us (300 trials)
+    |__ ULSCH LDPC encoder time              0.00 us (  1 trials)
+    |__ ULSCH rate-matching time             0.75 us (3456 trials)
+    |__ ULSCH interleaving time              3.02 us (3456 trials)
+|__ RX SRS time                              0.00 us (  0 trials)
+    |__ Generate SRS sequence time           0.00 us (  0 trials)
+    |__ Get SRS signal time                  0.00 us (  0 trials)
+    |__ SRS channel estimation time          0.00 us (  0 trials)
+    |__ SRS timing advance estimation time   0.00 us (  0 trials)
+    |__ SRS report TLV build time            0.00 us (  0 trials)
+        |__ SRS beam report build time       0.00 us (  0 trials)
+        |__ SRS IQ matrix build time         0.00 us (  0 trials)
+
+*****************************************
+SNR 24.600000: n_errors (8/100,0/8,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (66256/30139200,5187/2411136,0/0,0/0)
+
+SNR 24.600000: Channel BLER (8.000000e-02,0.000000e+00,-nan,-nan Channel BER (2.198333e-03,2.151268e-03,-nan,-nan) Avg round 1.08, Eff Rate 251880.9600 bits/slot, Eff Throughput 96.00, TBS 262376 bits/slot
+DMRS-PUSCH delay estimation: min 0, max 0, average 0.000000
+*****************************************
+
+gNB RX
+Total PHY proc rx                           678.28 us (108 trials)
+ Statistics std=29.63, median=0.00, q1=0.00, q3=0.00 µs (on 0 trials)
+|__ RX PUSCH time                          302.83 us (108 trials)
+    |__ ULSCH channel estimation time      152.90 us (108 trials)
+    |__ RX PUSCH Initialization time        49.52 us (108 trials)
+    |__ RX PUSCH Symbol Processing time     99.92 us (108 trials)
+
+UE TX
+|__ ULSCH total encoding time              321.33 us (108 trials)
+    |__ ULSCH segmentation time             20.23 us (400 trials)
+    |__ ULSCH LDPC encoder time              0.00 us (  1 trials)
+    |__ ULSCH rate-matching time             0.75 us (3456 trials)
+    |__ ULSCH interleaving time              3.02 us (3456 trials)
+|__ RX SRS time                              0.00 us (  0 trials)
+    |__ Generate SRS sequence time           0.00 us (  0 trials)
+    |__ Get SRS signal time                  0.00 us (  0 trials)
+    |__ SRS channel estimation time          0.00 us (  0 trials)
+    |__ SRS timing advance estimation time   0.00 us (  0 trials)
+    |__ SRS report TLV build time            0.00 us (  0 trials)
+        |__ SRS beam report build time       0.00 us (  0 trials)
+        |__ SRS IQ matrix build time         0.00 us (  0 trials)
+
+*****************************************
+SNR 24.800000: n_errors (2/100,0/2,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (63138/30139200,1186/602784,0/0,0/0)
+
+SNR 24.800000: Channel BLER (2.000000e-02,0.000000e+00,-nan,-nan Channel BER (2.094880e-03,1.967537e-03,-nan,-nan) Avg round 1.02, Eff Rate 259752.2400 bits/slot, Eff Throughput 99.00, TBS 262376 bits/slot
+DMRS-PUSCH delay estimation: min 0, max 0, average 0.000000
+*****************************************
+
+gNB RX
+Total PHY proc rx                           677.85 us (102 trials)
+ Statistics std=17.77, median=0.00, q1=0.00, q3=0.00 µs (on 0 trials)
+|__ RX PUSCH time                          302.41 us (102 trials)
+    |__ ULSCH channel estimation time      152.90 us (102 trials)
+    |__ RX PUSCH Initialization time        49.63 us (102 trials)
+    |__ RX PUSCH Symbol Processing time     99.38 us (102 trials)
+
+UE TX
+|__ ULSCH total encoding time              333.01 us (102 trials)
+    |__ ULSCH segmentation time             20.23 us (500 trials)
+    |__ ULSCH LDPC encoder time              0.00 us (  1 trials)
+    |__ ULSCH rate-matching time             0.76 us (3264 trials)
+    |__ ULSCH interleaving time              3.02 us (3264 trials)
+|__ RX SRS time                              0.00 us (  0 trials)
+    |__ Generate SRS sequence time           0.00 us (  0 trials)
+    |__ Get SRS signal time                  0.00 us (  0 trials)
+    |__ SRS channel estimation time          0.00 us (  0 trials)
+    |__ SRS timing advance estimation time   0.00 us (  0 trials)
+    |__ SRS report TLV build time            0.00 us (  0 trials)
+        |__ SRS beam report build time       0.00 us (  0 trials)
+        |__ SRS IQ matrix build time         0.00 us (  0 trials)
+
+*****************************************
+SNR 25.000000: n_errors (0/100,0/0,0/0,0/0) (negative CRC), false_positive 0/100, errors_scrambling (60946/30139200,0/0,0/0,0/0)
+
+SNR 25.000000: Channel BLER (0.000000e+00,-nan,-nan,-nan Channel BER (2.022151e-03,-nan,-nan,-nan) Avg round 1.00, Eff Rate 262376.0000 bits/slot, Eff Throughput 100.00, TBS 262376 bits/slot
+DMRS-PUSCH delay estimation: min 0, max 0, average 0.000000
+*****************************************
+
+gNB RX
+Total PHY proc rx                           680.50 us (100 trials)
+ Statistics std=7.04, median=0.00, q1=0.00, q3=0.00 µs (on 0 trials)
+|__ RX PUSCH time                          302.35 us (100 trials)
+    |__ ULSCH channel estimation time      152.92 us (100 trials)
+    |__ RX PUSCH Initialization time        49.69 us (100 trials)
+    |__ RX PUSCH Symbol Processing time     99.25 us (100 trials)
+
+UE TX
+|__ ULSCH total encoding time              337.16 us (100 trials)
+    |__ ULSCH segmentation time             20.23 us (600 trials)
+    |__ ULSCH LDPC encoder time              0.00 us (  1 trials)
+    |__ ULSCH rate-matching time             0.76 us (3200 trials)
+    |__ ULSCH interleaving time              3.02 us (3200 trials)
+|__ RX SRS time                              0.00 us (  0 trials)
+    |__ Generate SRS sequence time           0.00 us (  0 trials)
+    |__ Get SRS signal time                  0.00 us (  0 trials)
+    |__ SRS channel estimation time          0.00 us (  0 trials)
+    |__ SRS timing advance estimation time   0.00 us (  0 trials)
+    |__ SRS report TLV build time            0.00 us (  0 trials)
+        |__ SRS beam report build time       0.00 us (  0 trials)
+        |__ SRS IQ matrix build time         0.00 us (  0 trials)
+
+*************
+PUSCH test OK
+*************
+
+Num RB:	273
+Num symbols:	12
+MCS:	25
+DMRS config type:	0
+DMRS add pos:	0
+PUSCH mapping type:	1
+DMRS length:	1
+DMRS CDM gr w/o data:	1
+```
+
 
 # References
 
