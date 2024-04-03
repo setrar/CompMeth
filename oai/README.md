@@ -10,6 +10,60 @@ cat /proc/cmdline
 BOOT_IMAGE=(hd0,gpt2)/vmlinuz-5.14.0-362.18.1.el9_3.x86_64 root=/dev/mapper/rhel_meduse-root ro crashkernel=1G-4G:192M,4G-64G:256M,64G-:512M resume=/dev/mapper/rhel_meduse-swap rd.lvm.lv=rhel_meduse/root rd.lvm.lv=rhel_meduse/swap rhgb quiet skew_tick=1 tsc=reliable rcupdate.rcu_normal_after_boot=1 isolcpus=managed_irq,domain,0,2,4,6,8,10,12,14 intel_pstate=disable nosoftlockup
 ```
 
+--
+
+- [ ] Clone OAI in `(~/Developer)`
+
+```
+git clone git@gitlab.eurecom.fr:robert/openairinterface5g.git
+```
+
+- [ ] Build
+
+```
+cd ~/Developer/openairinterface5g/cmake_targets/ran_build/build
+```
+
+```
+./build_oai --phy_simulators
+```
+> Returns
+```powershell
+Will compile dlsim, ulsim, ...
+OPENAIR_DIR    = /home/bricer/Developer/openairinterface5g
+Running "cmake3 ../../.."
+-- Ccache not found. Consider installing it for faster compilation. Command: sudo apt/dnf install ccache
+-- Check if /opt/asn1c/bin/asn1c supports -gen-APER
+-- Check if /opt/asn1c/bin/asn1c supports -no-gen-UPER
+-- Check if /opt/asn1c/bin/asn1c supports -no-gen-JER
+-- Check if /opt/asn1c/bin/asn1c supports -no-gen-BER
+-- Check if /opt/asn1c/bin/asn1c supports -no-gen-OER
+-- CMAKE_BUILD_TYPE is RelWithDebInfo
+-- CPU architecture is x86_64
+-- AVX512 intrinsics are ON
+-- AVX2 intrinsics are ON
+-- Selected E2AP_VERSION: E2AP_V2
+-- Selected KPM Version: KPM_V2_03
+-- No Support for Aerial
+-- No Doxygen documentation requested
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/bricer/Developer/openairinterface5g/cmake_targets/ran_build/build
+cd /home/bricer/Developer/openairinterface5g/cmake_targets/ran_build/build
+Running "cmake3 --build .  --target dlsim ulsim ldpctest polartest smallblocktest nr_pbchsim nr_dlschsim nr_ulschsim nr_dlsim nr_ulsim nr_pucchsim nr_prachsim params_libconfig coding rfsimulator dfts -- -j28" 
+Log file for compilation is being written to: /home/bricer/Developer/openairinterface5g/cmake_targets/log/all.txt
+dlsim ulsim ldpctest polartest smallblocktest nr_pbchsim nr_dlschsim nr_ulschsim nr_dlsim nr_ulsim nr_pucchsim nr_prachsim params_libconfig coding rfsimulator dfts compiled
+BUILD SHOULD BE SUCCESSFUL
+```
+
+
+```
+[bricer@meduse build]$ cd ~/Developer/openairinterface5g/cmake_targets/ran_build/build
+```
+
+
+
+
 ```
 sudo ./nr_ulsim -C 4 -m 25 -s 24 -z 4 -n 100 -P -q 1 -R 273 -r 273
 ```
