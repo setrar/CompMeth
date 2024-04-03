@@ -906,6 +906,60 @@ DMRS CDM gr w/o data:	1
 
 
 ```
+./nr_ulsim -h
+```
+> Returns
+```powershell
+CMDLINE: "./nr_ulsim" "-h" 
+[CONFIG] get parameters from cmdline [CONFIG] debug flags: 0x00500000
+Initializing random number generator, seed 2897035051185183220
+./nr_ulsim: option requires an argument -- 'h'
+handling optarg ?
+./nr_ulsim -h(elp)
+-a ULSCH starting symbol
+-b ULSCH number of symbols
+-c RNTI
+-d Introduce delay in terms of number of samples
+-e To simulate MSG3 configuration
+-f Input file to read from
+-g Channel model configuration. Arguments list: Number of arguments = 3, {Channel model: [A] TDLA30, [B] TDLB100, [C] TDLC300}, {Correlation: [l] Low, [m] Medium, [h] High}, {Maximum Doppler shift} e.g. -g A,l,10
+-h This message
+-i Change channel estimation technique. Arguments list: Number of arguments=2, Frequency domain {0:Linear interpolation, 1:PRB based averaging}, Time domain {0:Estimates of last DMRS symbol, 1:Average of DMRS symbols}. e.g. -i 1,0
+-k 3/4 sampling
+-m MCS value
+-n Number of trials to simulate
+-o ldpc offload flag
+-p Use extended prefix mode
+-q MCS table
+-r Number of allocated resource blocks for PUSCH
+-s Starting SNR, runs from SNR0 to SNR0 + 10 dB if ending SNR isn't given
+-S Ending SNR, runs from SNR0 to SNR1
+-t Acceptable effective throughput (in percentage)
+-u Set the numerology
+-v Set the max rounds
+-w Start PRB for PUSCH
+-y Number of TX antennas used at UE
+-z Number of RX antennas used at gNB
+-C Specify the number of threads for the simulation
+-E {SRS: [0] Disabled, [1] Enabled} e.g. -E 1
+-F Input filename (.txt format) for RX conformance testing
+-G Offset of samples to read from file (0 default)
+-H Slot number
+-I Maximum LDPC decoder iterations
+-L <log level, 0(errors), 1(warning), 2(info) 3(debug) 4 (trace)>
+-M Use limited buffer rate-matching
+-P Print ULSCH performances
+-Q If -F used, read parameters from file
+-R Maximum number of available resorce blocks (N_RB_DL)
+-T Enable PTRS, arguments list: Number of arguments=2 L_PTRS{0,1,2} K_PTRS{2,4}, e.g. -T 0,2 
+-U Change DMRS Config, arguments list: Number of arguments=4, DMRS Mapping Type{0=A,1=B}, DMRS AddPos{0:3}, DMRS Config Type{1,2}, Number of CDM groups without data{1,2,3} e.g. -U 0,2,0,1 
+-W Num of layer for PUSCH
+-X Output filename (.csv format) for stats
+-Z If -Z is used, SC-FDMA or transform precoding is enabled in Uplink
+```
+
+
+```
 ./build_oai --phy_simulators
 ```
 > Returns
