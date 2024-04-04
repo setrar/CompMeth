@@ -158,3 +158,21 @@ ERROR: 20 error. See /home/ubuntu/Developer/gitlab.eurecom.fr/openairinterface5g
 compilation of dlsim ulsim ldpctest polartest smallblocktest nr_pbchsim nr_dlschsim nr_ulschsim nr_dlsim nr_ulsim nr_pucchsim nr_prachsim params_libconfig coding rfsimulator dfts failed
 build have failed
 ```
+
+The error message you're seeing while compiling OpenAirInterface5G (OAI) indicates a problem related to SIMD (Single Instruction, Multiple Data) operations, specifically with ARM NEON intrinsics. The `vget_lane_f16` function is part of ARM's NEON SIMD architecture for efficient data processing on ARM processors. This function is designed to extract a single 16-bit floating-point value from a NEON vector at a specified index.
+
+The error `incompatible type for argument 1 of ‘vget_lane_f16’` suggests that the first argument passed to `vget_lane_f16` does not match the expected type. The `vget_lane_f16` function expects its first argument to be a NEON vector containing 16-bit floating-point values (`float16x4_t` for a short vector or `float16x8_t` for a long vector) and its second argument to be an integer representing the lane (index) from which to extract the value.
+
+To resolve this issue, ensure the following:
+
+1. **Correct Data Types**: Make sure that the variable passed as the first argument to `vget_lane_f16` is of the correct NEON vector type. If the data type is incorrect, you may need to cast it to the correct type or check your code to ensure that the correct type of vector is being generated.
+
+2. **Include the Proper Headers**: Ensure that you have included all necessary headers for NEON intrinsics to be recognized by the compiler. This usually involves including headers like `<arm_neon.h>` or, in your case, the SIMDe library headers if you are attempting to use NEON intrinsics on non-ARM hardware.
+
+3. **Compiler Flags**: If you are cross-compiling or targeting specific ARM architectures, ensure that your compiler flags are correctly set to enable NEON support. For GCC and Clang, this typically involves flags like `-mfpu=neon` for ARMv7-A or the appropriate architecture flag for ARMv8-A (e.g., `-march=armv8-a+fp+simd`).
+
+4. **SIMDe Compatibility**: If you're using SIMDe (SIMD Everywhere) to port NEON code to non-ARM architectures, ensure that you are using a version of SIMDe that supports the `vget_lane_f16` operation. Not all versions may support all NEON intrinsics, especially for half-precision floating-point operations, which are less commonly used and supported.
+
+5. **Review the SIMDe Documentation**: Since you're encountering this error in a file related to SIMDe, it's possible that there are limitations or specific requirements for using `vget_lane_f16` within SIMDe. Check the SIMDe documentation for any notes on using half-precision floating-point intrinsics.
+
+If after checking these points you still face issues, consider seeking help from the OpenAirInterface community or the SIMDe repository for more specific guidance. Additionally, examining the surrounding code for how the vector passed to `vget_lane_f16` is being prepared could provide clues to resolving the type mismatch.
