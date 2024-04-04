@@ -176,3 +176,7 @@ To resolve this issue, ensure the following:
 5. **Review the SIMDe Documentation**: Since you're encountering this error in a file related to SIMDe, it's possible that there are limitations or specific requirements for using `vget_lane_f16` within SIMDe. Check the SIMDe documentation for any notes on using half-precision floating-point intrinsics.
 
 If after checking these points you still face issues, consider seeking help from the OpenAirInterface community or the SIMDe repository for more specific guidance. Additionally, examining the surrounding code for how the vector passed to `vget_lane_f16` is being prepared could provide clues to resolving the type mismatch.
+
+# References
+
+- [ ] [NEON: Pieter P](https://tttapa.github.io/Pages/Raspberry-Pi/NEON/)
