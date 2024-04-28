@@ -155,4 +155,6 @@ DMRS CDM gr w/o data:	1
 
 # References
 
+- [ ] [](https://archive.fosdem.org/2017/schedule/speaker/raymond_knopp/)
 - [ ] [Slides from FOSDEM SDR Devroom part 1 (slides)](https://archive.fosdem.org/2017/schedule/event/oai/attachments/slides/1760/export/events/attachments/oai/slides/1760/oai_L1_L2_procedures_FOSDEM.pdf)
+- [ ] [FOSDEM 2017 - AMENDMENT Networked-Signal Processing in OAI](https://archive.org/details/fosdem-2017-oai)
