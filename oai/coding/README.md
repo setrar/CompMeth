@@ -152,3 +152,7 @@ PUSCH mapping type:	1
 DMRS length:	1
 DMRS CDM gr w/o data:	1
 ```
+
+# References
+
+- [ ] [Slides from FOSDEM SDR Devroom part 1 (slides)](https://archive.fosdem.org/2017/schedule/event/oai/attachments/slides/1760/export/events/attachments/oai/slides/1760/oai_L1_L2_procedures_FOSDEM.pdf)
