@@ -29,6 +29,8 @@ Returns the nvar calculation:
 
 total sum of noise_amp2 / total sum of nest_count (per antennas)
 
-- [ ] delay is returned as a `delay_t *delay = &gNB->ulsch[ul_id].delay` structure (current: last delay is returned
+- [ ] delay is returned as a `delay_t *delay = &gNB->ulsch[ul_id].delay` structure
 
-???
+Currently: the last delay is returned when doing the last antenna estimation processing 
+
+What would be the calculation to return one of the delays and store back to `gNB->ulsch[ul_id].delay`
