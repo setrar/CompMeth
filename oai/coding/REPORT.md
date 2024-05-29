@@ -21,7 +21,14 @@ per antenna processing,m which calculation should be applied? for:
 
 - [ ] max_ch is returned as an integer pointer
 
+Returns total sum of max_ch (per antennas)
+
 - [ ] nvar is returned as an unsigned 32-bit integer pointer
+
+Returns the nvar calculation:
+
+total sum of noise_amp2 / total sum of nest_count (per antennas)
 
 - [ ] delay is returned as a `delay_t *delay = &gNB->ulsch[ul_id].delay` structure (current: last delay is returned
 
+???
