@@ -1,5 +1,38 @@
+# Testing aarx noises
+
+- [ ] Which version
+
+> gcc --version
+gcc (GCC) 11.4.1 20231218 (Red Hat 11.4.1-3)
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 
+
+- [ ] Compile
+
+```
+gcc aarx.c
+```
+
+- [ ] Execute
+
+```
+./a.out
+```
+> Returns
+```powershell
+ Exit Pool - Starts 
+Array # = 0	 Estimated delay = 1	 Noise Amp2 = 10000000000	
+Array # = 1	 Estimated delay = 2	 Noise Amp2 = 20000000000	
+Array # = 2	 Estimated delay = 3	 Noise Amp2 = 30000000000	
+Array # = 3	 Estimated delay = 4	 Noise Amp2 = 40000000000	
+
+ Exit Pool - Ends 
+```
+
+## Source Code
 
 ```c
 #include <stdio.h>
