@@ -4,9 +4,14 @@
 git checkout develop
 ```
 
+- [ ] DMRS compiling
 
 ```
 git checkout dmrs_channel_estimation_parallelization
+```
+
+```
+sudo cmake_targets/build_oai --phy_simulators
 ```
 
 
