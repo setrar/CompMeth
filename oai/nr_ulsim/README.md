@@ -1,9 +1,11 @@
 # nr_ulsim
 
-## Testing using develop branch 
+## Testing 
 
 - 8 Antennas
 - 8 Cores
+
+### using `develop` branch 
 
 - [ ] Switch to `develop` branch
 
@@ -45,21 +47,27 @@ grep "ULSCH channel estimation time" /tmp/oai/develop/perf.log
 ```
 
 
-- [ ] DMRS compiling
+### using `dmrs_channel_estimation_parallelization` branch 
+
+- [ ] Switch to `dmrs_channel_estimation_parallelization` branch
 
 ```
 git checkout dmrs_channel_estimation_parallelization
 ```
 
+- [ ] Build with `--phy_simulators` option
+
 ```
 sudo cmake_targets/build_oai --phy_simulators
 ```
 
+- [ ] test and dump results in a file
 
 ```
 sudo cmake_targets/ran_build/build/nr_ulsim -C 8 -m 25 -s 24 -z 8 -n 200 -P -q 1 -R 273 -r 273 > /tmp/oai/dmrs/perf.log
 ```
-[sudo] password for bricer: 
+
+- [ ] Look for estimation time
 
 ```
 grep "ULSCH channel estimation time" /tmp/oai/dmrs/perf.log
