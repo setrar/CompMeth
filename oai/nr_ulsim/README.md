@@ -1,17 +1,29 @@
+# nr_ulsim
 
+## Testing using develop branch 
+
+- 8 Antennas
+- 8 Cores
+
+- [ ] Switch to `develop` branch
 
 ```
 git checkout develop
 ```
 
+- [ ] Build with `--phy_simulators` option
+
 ```
 sudo cmake_targets/build_oai --phy_simulators
 ```
 
+- [ ] test and dump results in a file
 
 ```
 sudo cmake_targets/ran_build/build/nr_ulsim -C 8 -m 25 -s 24 -z 8 -n 200 -P -q 1 -R 273 -r 273 > /tmp/oai/develop/perf.log
 ```
+
+- [ ] Look for estimation time
 
 ```
 grep "ULSCH channel estimation time" /tmp/oai/develop/perf.log
