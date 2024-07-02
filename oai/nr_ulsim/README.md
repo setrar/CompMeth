@@ -4,6 +4,35 @@
 git checkout develop
 ```
 
+```
+sudo cmake_targets/build_oai --phy_simulators
+```
+
+
+```
+sudo cmake_targets/ran_build/build/nr_ulsim -C 8 -m 25 -s 24 -z 8 -n 200 -P -q 1 -R 273 -r 273 > /tmp/oai/develop/perf.log
+```
+
+```
+grep "ULSCH channel estimation time" /tmp/oai/develop/perf.log
+```
+> Returns
+```powershell
+    |__ ULSCH channel estimation time      301.25 us (210 trials)
+    |__ ULSCH channel estimation time      301.30 us (209 trials)
+    |__ ULSCH channel estimation time      301.19 us (208 trials)
+    |__ ULSCH channel estimation time      301.22 us (210 trials)
+    |__ ULSCH channel estimation time      301.38 us (204 trials)
+    |__ ULSCH channel estimation time      301.29 us (206 trials)
+    |__ ULSCH channel estimation time      301.22 us (201 trials)
+    |__ ULSCH channel estimation time      301.10 us (203 trials)
+    |__ ULSCH channel estimation time      301.26 us (205 trials)
+    |__ ULSCH channel estimation time      301.21 us (202 trials)
+    |__ ULSCH channel estimation time      301.04 us (203 trials)
+    |__ ULSCH channel estimation time      301.12 us (200 trials)
+```
+
+
 - [ ] DMRS compiling
 
 ```
@@ -25,18 +54,58 @@ grep "ULSCH channel estimation time" /tmp/oai/dmrs/perf.log
 ```
 > Returns:
 ```powershell
-    |__ ULSCH channel estimation time      301.25 us (210 trials)
-    |__ ULSCH channel estimation time      301.30 us (209 trials)
-    |__ ULSCH channel estimation time      301.19 us (208 trials)
-    |__ ULSCH channel estimation time      301.22 us (210 trials)
-    |__ ULSCH channel estimation time      301.38 us (204 trials)
-    |__ ULSCH channel estimation time      301.29 us (206 trials)
-    |__ ULSCH channel estimation time      301.22 us (201 trials)
-    |__ ULSCH channel estimation time      301.10 us (203 trials)
-    |__ ULSCH channel estimation time      301.26 us (205 trials)
-    |__ ULSCH channel estimation time      301.21 us (202 trials)
-    |__ ULSCH channel estimation time      301.04 us (203 trials)
-    |__ ULSCH channel estimation time      301.12 us (200 trials)
+grep "ULSCH channel estimation time" /tmp/oai/dmrs/perf.log 
+    |__ ULSCH channel estimation time      171.12 us (351 trials)
+    |__ ULSCH channel estimation time      170.78 us (340 trials)
+    |__ ULSCH channel estimation time      171.13 us (351 trials)
+    |__ ULSCH channel estimation time      170.86 us (336 trials)
+    |__ ULSCH channel estimation time      170.33 us (332 trials)
+    |__ ULSCH channel estimation time      171.86 us (328 trials)
+    |__ ULSCH channel estimation time      170.46 us (328 trials)
+    |__ ULSCH channel estimation time      172.65 us (321 trials)
+    |__ ULSCH channel estimation time      169.98 us (311 trials)
+    |__ ULSCH channel estimation time      171.53 us (306 trials)
+    |__ ULSCH channel estimation time      170.38 us (304 trials)
+    |__ ULSCH channel estimation time      170.85 us (303 trials)
+    |__ ULSCH channel estimation time      170.72 us (294 trials)
+    |__ ULSCH channel estimation time      170.49 us (295 trials)
+    |__ ULSCH channel estimation time      170.55 us (296 trials)
+    |__ ULSCH channel estimation time      171.49 us (296 trials)
+    |__ ULSCH channel estimation time      171.23 us (291 trials)
+    |__ ULSCH channel estimation time      171.82 us (287 trials)
+    |__ ULSCH channel estimation time      171.09 us (295 trials)
+    |__ ULSCH channel estimation time      169.50 us (272 trials)
+    |__ ULSCH channel estimation time      171.43 us (298 trials)
+    |__ ULSCH channel estimation time      171.17 us (287 trials)
+    |__ ULSCH channel estimation time      170.04 us (286 trials)
+    |__ ULSCH channel estimation time      169.69 us (292 trials)
+    |__ ULSCH channel estimation time      169.54 us (270 trials)
+    |__ ULSCH channel estimation time      170.63 us (281 trials)
+    |__ ULSCH channel estimation time      169.78 us (294 trials)
+    |__ ULSCH channel estimation time      170.13 us (295 trials)
+    |__ ULSCH channel estimation time      170.57 us (286 trials)
+    |__ ULSCH channel estimation time      171.66 us (273 trials)
+    |__ ULSCH channel estimation time      171.49 us (285 trials)
+    |__ ULSCH channel estimation time      170.58 us (285 trials)
+    |__ ULSCH channel estimation time      170.92 us (291 trials)
+    |__ ULSCH channel estimation time      170.96 us (282 trials)
+    |__ ULSCH channel estimation time      171.08 us (281 trials)
+    |__ ULSCH channel estimation time      170.32 us (277 trials)
+    |__ ULSCH channel estimation time      171.06 us (281 trials)
+    |__ ULSCH channel estimation time      170.14 us (281 trials)
+    |__ ULSCH channel estimation time      169.63 us (278 trials)
+    |__ ULSCH channel estimation time      170.55 us (268 trials)
+    |__ ULSCH channel estimation time      169.55 us (289 trials)
+    |__ ULSCH channel estimation time      171.45 us (283 trials)
+    |__ ULSCH channel estimation time      170.75 us (277 trials)
+    |__ ULSCH channel estimation time      171.21 us (288 trials)
+    |__ ULSCH channel estimation time      169.97 us (288 trials)
+    |__ ULSCH channel estimation time      169.92 us (286 trials)
+    |__ ULSCH channel estimation time      169.84 us (281 trials)
+    |__ ULSCH channel estimation time      170.91 us (290 trials)
+    |__ ULSCH channel estimation time      170.77 us (287 trials)
+    |__ ULSCH channel estimation time      171.17 us (270 trials)
+    |__ ULSCH channel estimation time      170.25 us (280 trials)
 ```
 
 ---
