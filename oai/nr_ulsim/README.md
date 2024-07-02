@@ -138,3 +138,7 @@ The command line you've shared invokes the `nr_ulsim` utility with several optio
 
 ### Summary
 This command configures a complex simulation of an uplink scenario in a 5G network using the nr_ulsim utility. It utilizes multiple threads for efficiency, employs a specific modulation and coding scheme, and tests under a high-quality signal condition with multiple receive antennas. The simulation is repeated over 100 trials to ensure statistical reliability and focuses on the performance of the uplink shared channel under these conditions.
+
+# References
+
+- [ ] [Using SIMD for Parallel Processing in Rust](https://nrempel.com/using-simd-for-parallel-processing-in-rust)
