@@ -1,3 +1,9 @@
+
+
+---
+
+# References
+
 The command line you've shared invokes the `nr_ulsim` utility with several options that configure its behavior for a specific simulation scenario. Here's a breakdown of each argument and what it configures based on the provided help output:
 
 ```bash
