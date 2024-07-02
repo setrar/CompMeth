@@ -1,5 +1,14 @@
 
 
+```
+git checkout develop
+```
+
+
+```
+git checkout dmrs_channel_estimation_parallelization
+```
+
 
 ```
 sudo cmake_targets/ran_build/build/nr_ulsim -C 8 -m 25 -s 24 -z 8 -n 200 -P -q 1 -R 273 -r 273 > /tmp/oai/dmrs/perf.log
