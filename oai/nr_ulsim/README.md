@@ -1,5 +1,30 @@
 
 
+
+```
+sudo cmake_targets/ran_build/build/nr_ulsim -C 8 -m 25 -s 24 -z 8 -n 200 -P -q 1 -R 273 -r 273 > /tmp/oai/dmrs/perf.log
+```
+[sudo] password for bricer: 
+
+```
+grep "ULSCH channel estimation time" /tmp/oai/dmrs/perf.log
+```
+> Returns:
+```powershell
+    |__ ULSCH channel estimation time      301.25 us (210 trials)
+    |__ ULSCH channel estimation time      301.30 us (209 trials)
+    |__ ULSCH channel estimation time      301.19 us (208 trials)
+    |__ ULSCH channel estimation time      301.22 us (210 trials)
+    |__ ULSCH channel estimation time      301.38 us (204 trials)
+    |__ ULSCH channel estimation time      301.29 us (206 trials)
+    |__ ULSCH channel estimation time      301.22 us (201 trials)
+    |__ ULSCH channel estimation time      301.10 us (203 trials)
+    |__ ULSCH channel estimation time      301.26 us (205 trials)
+    |__ ULSCH channel estimation time      301.21 us (202 trials)
+    |__ ULSCH channel estimation time      301.04 us (203 trials)
+    |__ ULSCH channel estimation time      301.12 us (200 trials)
+```
+
 ---
 
 # References
