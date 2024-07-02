@@ -3,7 +3,7 @@
 ## Testing 
 
 - 8 Antennas
-- 8 Cores
+- 8 Threads
 
 ### using `develop` branch 
 
