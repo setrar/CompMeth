@@ -1,30 +1,17 @@
 
 
-- [ ] Removing code from 154-459
-
-```powershell
-/home/bricer/Developer/openairinterface5g/openair1/PHY/NR_ESTIMATION/nr_ul_channel_estimation.c:89:13: warning: unused variable ‘nushift’ [-Wunused-variable]
-   89 |   const int nushift = (p >> 1) & 1;
-      |             ^~~~~~~
-/home/bricer/Developer/openairinterface5g/openair1/PHY/NR_ESTIMATION/nr_ul_channel_estimation.c:86:11: warning: unused variable ‘ul_ch_estimates’ [-Wunused-variable]
-   86 |   c16_t **ul_ch_estimates = (c16_t **)pusch_vars->ul_ch_estimates;
-      |           ^~~~~~~~~~~~~~~
-/home/bricer/Developer/openairinterface5g/openair1/PHY/NR_ESTIMATION/nr_ul_channel_estimation.c:79:13: warning: unused variable ‘chest_freq’ [-Wunused-variable]
-   79 |   const int chest_freq = gNB->chest_freq;
-      |             ^~~~~~~~~~
-[100%] Linking C static library libPHY_NR.a
-WARNING: 3 warnings. See /home/bricer/Developer/openairinterface5g/cmake_targets/log/all.txt
-```
+- [ ] Compiling againt the PHY simulators
 
 ```
 cmake_targets/build_oai --phy_simulators
 ```
 > Returns
 ```powershell
+[sudo] password for bricer: 
 Will compile dlsim, ulsim, ...
-OPENAIR_DIR    = /home/bricer/Developer/robert/openairinterface5g
+OPENAIR_DIR    = /home/bricer/Developer/openairinterface5g
 Running "cmake3 ../../.."
--- Ccache not found. Consider installing it for faster compilation. Command: sudo apt/dnf install ccache
+-- Found ccache in /bin/ccache. Using ccache. CMake >= 3.4
 -- Check if /opt/asn1c/bin/asn1c supports -gen-APER
 -- Check if /opt/asn1c/bin/asn1c supports -no-gen-UPER
 -- Check if /opt/asn1c/bin/asn1c supports -no-gen-JER
@@ -36,28 +23,48 @@ Running "cmake3 ../../.."
 -- AVX2 intrinsics are ON
 -- Selected E2AP_VERSION: E2AP_V2
 -- Selected KPM Version: KPM_V2_03
--- No Support for Aerial
+-- LTTNG support disabled
+-- Checking for module 'libcap'
+--   Package 'libcap', required by 'virtual:world', not found
 -- No Doxygen documentation requested
--- Configuring done
--- Generating done
--- Build files have been written to: /home/bricer/Developer/robert/openairinterface5g/cmake_targets/ran_build/build
-cd /home/bricer/Developer/robert/openairinterface5g/cmake_targets/ran_build/build
+-- No Support for Aerial
+-- Configuring done (0.2s)
+-- Generating done (2.0s)
+-- Build files have been written to: /home/bricer/Developer/openairinterface5g/cmake_targets/ran_build/build
+cd /home/bricer/Developer/openairinterface5g/cmake_targets/ran_build/build
 Running "cmake3 --build .  --target dlsim ulsim ldpctest polartest smallblocktest nr_pbchsim nr_dlschsim nr_ulschsim nr_dlsim nr_ulsim nr_pucchsim nr_prachsim nr_psbchsim params_libconfig coding rfsimulator dfts -- -j28" 
-Log file for compilation is being written to: /home/bricer/Developer/robert/openairinterface5g/cmake_targets/log/all.txt
-/home/bricer/Developer/robert/openairinterface5g/openair1/PHY/NR_ESTIMATION/nr_ul_channel_estimation.c:89:13: warning: unused variable ‘nushift’ [-Wunused-variable]
-   89 |   const int nushift = (p >> 1) & 1;
-      |             ^~~~~~~
-/home/bricer/Developer/robert/openairinterface5g/openair1/PHY/NR_ESTIMATION/nr_ul_channel_estimation.c:86:11: warning: unused variable ‘ul_ch_estimates’ [-Wunused-variable]
-   86 |   c16_t **ul_ch_estimates = (c16_t **)pusch_vars->ul_ch_estimates;
-      |           ^~~~~~~~~~~~~~~
-/home/bricer/Developer/robert/openairinterface5g/openair1/PHY/NR_ESTIMATION/nr_ul_channel_estimation.c:79:13: warning: unused variable ‘chest_freq’ [-Wunused-variable]
-   79 |   const int chest_freq = gNB->chest_freq;
-      |             ^~~~~~~~~~
-[100%] Linking C static library libPHY_NR.a
-WARNING: 3 warnings. See /home/bricer/Developer/robert/openairinterface5g/cmake_targets/log/all.txt
+Log file for compilation is being written to: /home/bricer/Developer/openairinterface5g/cmake_targets/log/all.txt
 dlsim ulsim ldpctest polartest smallblocktest nr_pbchsim nr_dlschsim nr_ulschsim nr_dlsim nr_ulsim nr_pucchsim nr_prachsim nr_psbchsim params_libconfig coding rfsimulator dfts compiled
 BUILD SHOULD BE SUCCESSFUL
 ```
+
+The output of the command `sudo cmake_targets/build_oai --phy_simulators` indicates the following steps and outcomes:
+
+1. **Compilation Start**: The command initiates the build process for OpenAirInterface (OAI) physical layer simulators. The user `bricer` is prompted for their password to execute the command with `sudo` privileges.
+   
+2. **CMake Configuration**:
+   - The script identifies the directory for OpenAirInterface (`OPENAIR_DIR = /home/bricer/Developer/openairinterface5g`).
+   - It runs the CMake configuration command (`cmake3 ../../..`).
+   - It finds `ccache` and confirms that CMake version is 3.4 or higher.
+   - Several checks are performed to verify the capabilities of the ASN.1 compiler (`/opt/asn1c/bin/asn1c`).
+   - The build type is set to `RelWithDebInfo`, which is a build with optimizations and debug information.
+   - The CPU architecture is identified as `x86_64`, and AVX512 and AVX2 intrinsics are enabled.
+   - The versions for E2AP and KPM are selected as `E2AP_V2` and `KPM_V2_03` respectively.
+   - LTTNG (Linux Tracing Toolkit Next Generation) support is disabled.
+   - The script checks for the `libcap` module but does not find it (`Package 'libcap', required by 'virtual:world', not found`).
+   - Documentation with Doxygen is not requested, and support for aerial features is not included.
+   - The CMake configuration process completes successfully, generating build files in `/home/bricer/Developer/openairinterface5g/cmake_targets/ran_build/build`.
+
+3. **Build Execution**:
+   - The build directory is changed to `/home/bricer/Developer/openairinterface5g/cmake_targets/ran_build/build`.
+   - The build command is executed (`cmake3 --build .  --target ... -- -j28`), specifying several targets to be compiled (e.g., `dlsim`, `ulsim`, `nr_dlsim`, `nr_ulsim`, etc.).
+   - The build process uses 28 parallel jobs (`-j28`).
+
+4. **Log File Creation**: The compilation log is written to `/home/bricer/Developer/openairinterface5g/cmake_targets/log/all.txt`.
+
+5. **Build Completion**: The listed targets are successfully compiled, and the message `BUILD SHOULD BE SUCCESSFUL` confirms that the build process was completed without errors.
+
+Overall, the output indicates that the build process for the specified OAI physical layer simulators was configured and executed successfully.
 
 ```
 sudo cmake_targets/ran_build/build/nr_ulsim -C 4 -m 25 -s 24 -z 1 -n 100 -P -q 1 -R 273 -r 273
